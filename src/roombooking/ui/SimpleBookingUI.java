@@ -1,17 +1,12 @@
 package roombooking.ui;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.io.*;
 
 import roombooking.controller.BookingController;
 import roombooking.controller.CustomerController;
 import roombooking.controller.RoomController;
-import roombooking.model.Customer;
-import roombooking.model.Room;
 
-public class BookingUI {
+public class SimpleBookingUI {
 
 	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
