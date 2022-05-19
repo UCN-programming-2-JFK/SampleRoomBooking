@@ -12,6 +12,7 @@ public class Program {
 		AddAndShowTestCustomers();
 		AddAndShowTestRooms();
 		
+		//SimpleBookingUI bookingUI = new SimpleBookingUI();
 		SimpleBookingUI bookingUI = new SimpleBookingUI();
 		
 		bookingUI.newBooking();

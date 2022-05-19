@@ -19,15 +19,12 @@ public class NiceBookingUI {
 		bookingController.createNewBoking();
 
 		if (addCustomer() && addRooms()) {
-			bookingController.saveBooking();
-		} else {
+			saveAndDisplayBooking();
+			} else {
 			cleanup();
 			System.out.println(EXIT_COMMAND + " selected. Temporary booking deleted. Goodbye :)");
 			return;
 		}
-
-		System.out.println("Booking created:");
-		System.out.println(bookingController.getBooking());
 	}
 
 	private boolean addRooms() throws IOException {
@@ -81,9 +78,15 @@ public class NiceBookingUI {
 		}
 		return true;
 	}
-
+	
 	private boolean isExitCommand(String input) {
 		return input.toUpperCase().equals(EXIT_COMMAND);
+	}
+
+	private void saveAndDisplayBooking() {
+		bookingController.saveBooking();
+		System.out.println("Booking created:");
+		System.out.println(bookingController.getBooking());
 	}
 	
 	private void cleanup() {
