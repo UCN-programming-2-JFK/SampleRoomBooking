@@ -3,6 +3,7 @@ package roombooking;
 import java.io.IOException;
 import roombooking.container.*;
 import roombooking.model.*;
+import roombooking.ui.NiceBookingUI;
 import roombooking.ui.SimpleBookingUI;
 
 public class Program {
@@ -12,8 +13,8 @@ public class Program {
 		AddAndShowTestCustomers();
 		AddAndShowTestRooms();
 		
+		NiceBookingUI bookingUI = new NiceBookingUI();
 		//SimpleBookingUI bookingUI = new SimpleBookingUI();
-		SimpleBookingUI bookingUI = new SimpleBookingUI();
 		
 		bookingUI.newBooking();
 	}

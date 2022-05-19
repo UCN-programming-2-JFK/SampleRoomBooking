@@ -46,7 +46,7 @@ public class NiceBookingUI {
 				int roomNumber = 0;
 				try {
 					roomNumber = Integer.parseInt(roomNumberString);
-					roomFound = bookingController.addRoom(roomNumber);
+					roomFound = bookingController.addRoomToBooking(roomNumber);
 					if (!roomFound) {
 						System.out.println("Room not found");
 					}
@@ -54,17 +54,16 @@ public class NiceBookingUI {
 					System.out.println("Unable to understand room number: '" + roomNumberString + "'.");
 				}
 			} while (!roomFound);
-
-			addMoreRooms = askWhetherToAddMoreRooms();
+			
+			System.out.println("Add another room? (Y/N)");
+			String addMoreRoomsString = reader.readLine();
+			if (isExitCommand(addMoreRoomsString)) {return false;}
+			addMoreRooms = addMoreRoomsString.toLowerCase().contains("y");
+			
 		} while (addMoreRooms);
 		return true;
 	}
 
-	private boolean askWhetherToAddMoreRooms() throws IOException {
-		System.out.println("Add another room? (Y/N)");
-		String addMoreRoomsString = reader.readLine();
-		return addMoreRoomsString.toLowerCase().contains("y");
-	}
 
 	private boolean addCustomer() throws IOException {
 
@@ -73,10 +72,8 @@ public class NiceBookingUI {
 		while (!customerFound) {
 			System.out.println("Enter customer email");
 			String input = reader.readLine();
-			if (isExitCommand(input)) {
-				return false;
-			}
-			customerFound = bookingController.addCustomer(input);
+			if (isExitCommand(input)) {return false;}
+			customerFound = bookingController.addCustomerToBooking(input);
 			if (!customerFound) {
 				System.out.println("Customer not found");
 			}

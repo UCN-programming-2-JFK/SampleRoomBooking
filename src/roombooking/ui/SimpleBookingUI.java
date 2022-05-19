@@ -26,7 +26,7 @@ public class SimpleBookingUI {
 		while (!customerFound) {
 			System.out.println("Enter customer email");
 			String customerEmail = reader.readLine();
-			customerFound = bookingController.addCustomer(customerEmail);
+			customerFound = bookingController.addCustomerToBooking(customerEmail);
 			if (!customerFound) {
 				System.out.println("Customer not found");
 			}
@@ -45,7 +45,7 @@ public class SimpleBookingUI {
 				//this could be improved by adding try-catch 
 				//in case non-numeric values are entered by user
 				int roomNumber = Integer.parseInt(roomNumberString);
-				roomFound = bookingController.addRoom(roomNumber);
+				roomFound = bookingController.addRoomToBooking(roomNumber);
 				if (!roomFound) {
 					System.out.println("Room not found");
 				}
