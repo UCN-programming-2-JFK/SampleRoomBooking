@@ -26,6 +26,7 @@ public class BookingUI {
 
 		bookingController.createNewBoking();
 
+		//keeps looping until valid customer is found by email
 		boolean customerFound = false;
 		while (!customerFound) {
 			System.out.println("Enter customer email");
@@ -36,13 +37,18 @@ public class BookingUI {
 			}
 		}
 
-		boolean addMoreRooms = true;
 
+		//keeps looping while user wants to add more rooms
+		boolean addMoreRooms = true;
 		do {
+			//keeps looping until valid room found by room number
 			boolean roomFound = false;
 			do{
 				System.out.println("Enter room number");
 				String roomNumberString = reader.readLine();
+				
+				//this could be improved by adding try-catch 
+				//in case non-numeric values are entered by user
 				int roomNumber = Integer.parseInt(roomNumberString);
 				roomFound = bookingController.addRoom(roomNumber);
 				if (!roomFound) {

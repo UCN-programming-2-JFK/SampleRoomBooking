@@ -6,6 +6,7 @@ import java.util.List;
 import roombooking.model.Room;
 
 public class RoomContainer {
+	
 	private static RoomContainer instance;
 	private RoomContainer() {}
 	public static RoomContainer getInstance() {
@@ -32,5 +33,9 @@ public class RoomContainer {
 	
 	public void addRoom(Room room) {
 		rooms.add(room);
+	}
+	
+	public List<Room> getRooms(){
+		return new ArrayList<Room>(rooms);
 	}
 }

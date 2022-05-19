@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import roombooking.model.Customer;
+import roombooking.model.Room;
 
 public class CustomerContainer {
 	private static CustomerContainer instance;
@@ -32,5 +33,9 @@ public class CustomerContainer {
 	
 	public void addCustomer(Customer customer) {
 		customers.add(customer);
+	}
+	
+	public List<Customer> getCustomers(){
+		return new ArrayList<Customer>(customers);
 	}
 }
