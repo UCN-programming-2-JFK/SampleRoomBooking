@@ -13,7 +13,7 @@ public class BookingController {
 		booking = new Booking();
 	}
 	
-	public boolean addCustomer(String email) {
+	public boolean addCustomerToBooking(String email) {
 		Customer foundCustomer = CustomerContainer.getInstance().findCustomerByEmail(email);
 		if(foundCustomer != null) {
 			getBooking().setCustomer(foundCustomer);
@@ -22,7 +22,7 @@ public class BookingController {
 		return false;
 	}
 	
-	public boolean addRoom(int roomNumber) {
+	public boolean addRoomToBooking(int roomNumber) {
 		Room foundRoom = RoomContainer.getInstance().findRoomByNumber(roomNumber);
 		if(foundRoom != null) {
 			getBooking().addRoom(foundRoom);
