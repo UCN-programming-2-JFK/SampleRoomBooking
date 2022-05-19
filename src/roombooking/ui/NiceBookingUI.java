@@ -13,18 +13,22 @@ public class NiceBookingUI {
 
 	public void newBooking() throws IOException {
 
-		System.out.println("CREATING NICE BOOKING ('QUIT' to exit at any time)");
-		System.out.println();
+		printMenuNameAndExitGuide();
 
 		bookingController.createNewBoking();
 
 		if (addCustomer() && addRooms()) {
 			saveAndDisplayBooking();
-			} else {
-			cleanup();
+		} else {
+			cleanupTemporaryBooking();
 			System.out.println(EXIT_COMMAND + " selected. Temporary booking deleted. Goodbye :)");
 			return;
 		}
+	}
+
+	private void printMenuNameAndExitGuide() {
+		System.out.println("CREATING NICE BOOKING ('QUIT' to exit at any time)");
+		System.out.println();
 	}
 
 	private boolean addRooms() throws IOException {
@@ -50,7 +54,7 @@ public class NiceBookingUI {
 					System.out.println("Unable to understand room number: '" + roomNumberString + "'.");
 				}
 			} while (!roomFound);
-			
+
 			addMoreRooms = askWhetherToAddMoreRooms();
 		} while (addMoreRooms);
 		return true;
@@ -59,10 +63,11 @@ public class NiceBookingUI {
 	private boolean askWhetherToAddMoreRooms() throws IOException {
 		System.out.println("Add another room? (Y/N)");
 		String addMoreRoomsString = reader.readLine();
-		return addMoreRoomsString.toLowerCase().contains("y");	}
+		return addMoreRoomsString.toLowerCase().contains("y");
+	}
 
 	private boolean addCustomer() throws IOException {
-		
+
 		// keeps looping until valid customer is found by email
 		boolean customerFound = false;
 		while (!customerFound) {
@@ -78,7 +83,7 @@ public class NiceBookingUI {
 		}
 		return true;
 	}
-	
+
 	private boolean isExitCommand(String input) {
 		return input.toUpperCase().equals(EXIT_COMMAND);
 	}
@@ -88,8 +93,8 @@ public class NiceBookingUI {
 		System.out.println("Booking created:");
 		System.out.println(bookingController.getBooking());
 	}
-	
-	private void cleanup() {
+
+	private void cleanupTemporaryBooking() {
 		bookingController.setBooking(null);
 	}
 }
