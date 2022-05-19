@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>207</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_ : BookingUI _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>324</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : BookingController _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>513</x>
+      <y>441</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : BookingContainer _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>999</x>
+      <y>324</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : RoomController _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>765</x>
+      <y>567</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_ :  Booking _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>999</x>
+      <y>441</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : RoomContainer _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>234</y>
+      <w>252</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1 createNewBooking()
+2 addCustomer(email:String) : boolean
+3 *:addRoom(roomNumber:int) : boolean
+4 saveBooking()
+</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>351</y>
+      <w>324</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.1 &lt;&lt;create&gt;&gt; Booking()
+2.2 addCustomer(customer:Customer)
+3.2 addRoom(room:Room)</panel_attributes>
+    <additional_attributes>200.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>324</y>
+      <w>378</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1 room = findRoomByNumber(roomNumber:int) : Room</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1062</x>
+      <y>360</y>
+      <w>360</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1.1 room = findRoomByNumber(roomNumber:int) : Room</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>315</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : CustomerController _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>441</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ : CustomerContainer _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>324</y>
+      <w>405</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1 customer = findCustomerByEmail(email:String) : Customer</panel_attributes>
+    <additional_attributes>10.0;20.0;430.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>54</x>
+      <y>351</y>
+      <w>387</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1.1 customer = findCustomerByEmail(email:String) : Customer</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>360</y>
+      <w>216</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4.1 addBooking(booking:Booking)</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>27</y>
+      <w>90</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Customer
+-
+name
+email</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>414</x>
+      <y>27</y>
+      <w>81</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Booking</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>27</y>
+      <w>81</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Room
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>27</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+books &gt;</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>27</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=0..*
+contains &gt;</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>567</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_ : Customer _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>999</x>
+      <y>567</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_ : Room _</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>45</x>
+      <y>477</y>
+      <w>225</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1.1.1 * [i=1..n]: email = getEmail()</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1062</x>
+      <y>477</y>
+      <w>423</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1.1.1 * [i=1..n]: room = findRoomByNumber(roomNumber:int) : Room</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>387</x>
+      <y>207</y>
+      <w>153</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+newBooking()</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>
